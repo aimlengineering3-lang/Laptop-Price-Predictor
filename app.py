@@ -10,7 +10,11 @@ st.set_page_config(
 )
 
 # ---------------- LOAD MODEL ----------------
-model = pickle.load(open("model.pkl", "rb"))
+import os
+import joblib
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
+model = joblib.load(MODEL_PATH)
 
 # ---------------- CUSTOM CSS ----------------
 st.markdown("""
