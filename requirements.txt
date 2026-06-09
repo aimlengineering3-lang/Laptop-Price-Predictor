@@ -3,6 +3,4 @@ pandas
 numpy
 scikit-learn
 joblib
-pickle
-os
-pathlib
+matplotlib
