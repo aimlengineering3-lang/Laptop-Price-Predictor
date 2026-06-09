@@ -14,7 +14,15 @@ import os
 import joblib
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
-model = joblib.load(MODEL_PATH)
+import traceback
+import streamlit as st
+
+try:
+    model = joblib.load(MODEL_PATH)
+except Exception as e:
+    st.error(str(e))
+    st.code(traceback.format_exc())
+    st.stop()
 
 # ---------------- CUSTOM CSS ----------------
 st.markdown("""
